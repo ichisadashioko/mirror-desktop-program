@@ -1,6 +1,7 @@
 import os
 import time
 import json
+import traceback
 
 from PIL import ImageGrab
 
@@ -48,6 +49,8 @@ while True:
         ))
     except:
         # lock screen while fullscreen
+        # or on Linux where ImageGrab is not supported
+        traceback.print_exc()
         break
 
     # print(screen.shape)
